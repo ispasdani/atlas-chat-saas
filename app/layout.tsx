@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import ClientProviders from "@/utils/ClientProviders";
+import Header from "@/components/header/Header";
+import FirebaseAuthProvider from "@/utils/FirebaseAuthProvider";
+import PaymentProvider from "@/utils/PaymentProvider";
+import CreditsProvider from "@/utils/CreditsProvider";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,8 +21,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
-    </html>
+    <ClientProviders>
+      <html lang="en">
+        <body className={inter.className}>
+          <FirebaseAuthProvider>
+            <PaymentProvider>
+              <CreditsProvider>
+                <Header />
+                {children}
+                <Toaster />
+              </CreditsProvider>
+            </PaymentProvider>
+          </FirebaseAuthProvider>
+        </body>
+      </html>
+    </ClientProviders>
   );
 }
