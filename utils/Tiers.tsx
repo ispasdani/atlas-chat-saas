@@ -7,7 +7,7 @@ export const tiers = [
     priceId: process.env.NEXT_PUBLIC_PACKAGE_TRIAL,
     description: "For exploration of AI technology.",
     features: [
-      "200 Credits",
+      "100 Credits",
       "Unlimited Participants in Chats",
       "Unlimited Chat Rooms",
       "Supports all languages",
@@ -26,7 +26,7 @@ export const tiers = [
     description:
       "Perfect for professionals and small businesses in need of significant interactions.",
     features: [
-      "2000 Credits",
+      "1200 Credits",
       "Unlimited Participants in Chats",
       "Unlimited Chat Rooms",
       "Supports all languages",
@@ -42,7 +42,7 @@ export const tiers = [
     priceId: process.env.NEXT_PUBLIC_PACKAGE_BASE,
     description: "Start chatting right away with anyone, anywhere.",
     features: [
-      "1000 Credits",
+      "700 Credits",
       "Unlimited Participants in Chats",
       "Unlimited Chat Rooms",
       "Supports all languages",
