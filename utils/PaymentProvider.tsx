@@ -44,7 +44,6 @@ function PaymentProvider({ children }: { children: React.ReactNode }) {
       paymentRef(session.user.id),
       async (snapshot) => {
         if (snapshot.empty) {
-          console.log("User has no payments");
           return;
         } else {
           const payments = snapshot.docs.map((doc) => ({
@@ -99,15 +98,11 @@ function PaymentProvider({ children }: { children: React.ReactNode }) {
                 { processed: true }
               );
             });
-
-            console.log(
-              `Added ${creditsToAdd} credits to user ${session.user.id}`
-            );
           }
         }
       },
       (error) => {
-        console.log("Error getting payments", error);
+        console.error(error);
       }
     );
 

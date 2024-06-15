@@ -11,7 +11,7 @@ async function syncFirebaseAuth(session: Session) {
     try {
       await signInWithCustomToken(auth, session.firebaseToken);
     } catch (error) {
-      console.log("Error signing in with custom token: ", error);
+      console.error("Error signing in with custom token: ", error);
     }
   } else {
     auth.signOut();
